@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import os
 import matplotlib.font_manager as fm
 
-# --- 한글 폰트 설정 (Cloud 기본 폰트 사용) ---
-plt.rcParams['font.family'] = 'Malgun Gothic'
+# --- 한글 폰트 설정 (Streamlit Cloud 환경에 맞게 수정) ---
+plt.rcParams['font.family'] = 'DejaVu Sans'
 plt.rcParams['axes.unicode_minus'] = False
-# ------------------------------------------------
+# --------------------------------------------------------
 
 # secrets에서 API 불러오기
 API_KEY = st.secrets["API_KEY"]
