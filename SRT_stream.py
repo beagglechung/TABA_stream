@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import matplotlib.pyplot as plt
 
-# 한글 폰트 설정(Cloud)
+# 한글 폰트 설정 (Cloud 버전)
 plt.rcParams['font.family'] = 'DejaVu Sans'
 plt.rcParams['axes.unicode_minus'] = False
 
