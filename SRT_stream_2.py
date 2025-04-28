@@ -1,10 +1,20 @@
 import streamlit as st
 import requests
 import matplotlib.pyplot as plt
+import os
+import matplotlib.font_manager as fm
+import wget
 
-# 한글 폰트 설정(Cloud)
-plt.rcParams['font.family'] = 'DejaVu Sans'
+# --- 한글 폰트 다운로드 및 설정 (Streamlit Cloud용) ---
+font_url = "https://github.com/naver/nanumfont/blob/master/TTF/NanumGothic.ttf?raw=true"
+font_path = "./NanumGothic.ttf"
+if not os.path.exists(font_path):
+    wget.download(font_url, font_path)
+
+fontprop = fm.FontProperties(fname=font_path)
+plt.rcParams['font.family'] = fontprop.get_name()
 plt.rcParams['axes.unicode_minus'] = False
+# --------------------------------------------------------
 
 # secrets에서 API 불러오기
 API_KEY = st.secrets["API_KEY"]
