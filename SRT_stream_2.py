@@ -2,18 +2,9 @@ import streamlit as st
 import requests
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
-import os
-import urllib.request
 
-# --- 한글 폰트 다운로드 및 설정 (Streamlit Cloud용) ---
-font_url = "https://github.com/naver/nanumfont/raw/master/TTF/NanumGothic.ttf"
-font_path = "NanumGothic.ttf"
-
-if not os.path.exists(font_path):
-    urllib.request.urlretrieve(font_url, font_path)
-
-fontprop = fm.FontProperties(fname=font_path)
-plt.rcParams['font.family'] = fontprop.get_name()
+# --- 한글 폰트 설정 (Streamlit Cloud용 - 간단버전) ---
+plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['axes.unicode_minus'] = False
 # --------------------------------------------------------
 
